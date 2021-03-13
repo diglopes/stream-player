@@ -12,7 +12,8 @@ app.get("/audio", async (req, res) => {
     const stat = await promisifiedStat(filePath)
     res.set("Content-Type", "audio/ogg")
     res.set("Content-Length", stat.size)
-    const stream = fs.createReadStream(filePath)
+    const highWaterMark = 2
+    const stream = fs.createReadStream(filePath, { highWaterMark })
     stream.on("end", () => console.log("IT'S ALL FOLKS!"))
     stream.pipe(res)
 })
