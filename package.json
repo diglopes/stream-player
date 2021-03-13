@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/diglopes/stream-player/issues"
   },
-  "homepage": "https://github.com/diglopes/stream-player#readme"
+  "homepage": "https://github.com/diglopes/stream-player#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
